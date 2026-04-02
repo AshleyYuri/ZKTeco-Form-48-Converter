@@ -32,18 +32,19 @@ body {
 body {
     min-height: 100vh;
 }
-
 .gov-topline {
     height: 10px;
     background: linear-gradient(
         90deg,
-        #0038a8 0%,
-        #0038a8 33.33%,
-        #ce1126 33.33%,
-        #ce1126 66.66%,
-        #fcd116 66.66%,
-        #fcd116 100%
+        #1e3a8a,
+        #2563eb,
+        #60a5fa,
+        #fde68a,
+        #f59e0b,
+        #f87171,
+        #b91c1c
     );
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 .app {
@@ -106,7 +107,7 @@ body {
 }
 
 .hero p {
-    margin: 0;
+   margin: 0;
     max-width: 980px;
     font-size: 15px;
     line-height: 1.75;

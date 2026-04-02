@@ -223,17 +223,38 @@ function buildDayLogFromCell(dayNumber, rawValue, department = "") {
         ...mapped
     };
 }
-
 function extractCompactTimes(text) {
     const clean = normalizeCell(text).replace(/\s+/g, "");
     if (!clean) return [];
 
     const matches = clean.match(/\d{1,2}:\d{2}/g) || [];
 
-    return matches
+    const normalized = matches
         .map(normalizeTime)
         .filter(Boolean)
-        .filter(time => time !== "00:00");
+        .filter(time => time !== "00:00")
+        .sort((a, b) => toMinutes(a) - toMinutes(b));
+
+    const deduplicated = [];
+
+    for (const time of normalized) {
+        if (!deduplicated.length) {
+            deduplicated.push(time);
+            continue;
+        }
+
+        const lastTime = deduplicated[deduplicated.length - 1];
+        const diff = toMinutes(time) - toMinutes(lastTime);
+
+        // ignore exact duplicate or near duplicate within 1 minute
+        if (diff <= 1) {
+            continue;
+        }
+
+        deduplicated.push(time);
+    }
+
+    return deduplicated;
 }
 
 /* =========================
@@ -354,7 +375,7 @@ function getScheduleByDepartment(department = "") {
     // default if neither keyword exists
     return {
         type: "Default",
-        amIn: "08:00",
+        amIn: "07:15",
         amOut: "11:45",
         pmIn: "13:00",
         pmOut: "16:30"
