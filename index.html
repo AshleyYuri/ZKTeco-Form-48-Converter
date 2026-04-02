@@ -13,27 +13,24 @@
         <header class="hero no-print">
             <div class="hero-left">
                 <div class="seal-wrap">
-                    <div class="seal">DTR</div>
+                    <div class="seal">Isla</div>
                 </div>
 
                 <div class="hero-text">
                     <span class="eyebrow">Batang Taga Isla!</span>
                     <h1>ZKTeco to CS Form No. 48 Converter</h1>
                     <p>
-        This converter is designed and developed to efficiently transform ZKTeco biometric Daily Time Record (DTR) files 
-        into Civil Service Form No. 48. 
-         The system is carefully optimized to work exclusively with ZKTeco biometric devices,
-         guaranteeing seamless compatibility, precise output, and dependable performance.
-          At this time, support for other biometric brands is not available, as the system is
-           specifically tailored to maintain the integrity and standardization of ZKTeco-generated data.
-</p>
+                        This converter is designed and developed to efficiently transform ZKTeco biometric Daily Time Record (DTR) files
+                        into Civil Service Form No. 48. The system is carefully optimized to work exclusively with ZKTeco biometric devices,
+                        guaranteeing seamless compatibility, precise output, and dependable performance. At this time, support for other
+                        biometric brands is not available, as the system is specifically tailored to maintain the integrity and
+                        standardization of ZKTeco-generated data.
+                    </p>
 
                     <div class="hero-badges">
-                        <span class="badge">ZKTEco</span>
+                        <span class="badge">ZKTeco</span>
                         <span class="badge">Hikvision (Soon)</span>
                         <span class="badge">Other Brands (Soon)</span>
-                         
-                       
                     </div>
                 </div>
             </div>
@@ -47,8 +44,10 @@
 
             <div class="controls">
                 <input type="file" id="fileInput" accept=".xlsx,.xls" />
-                <button id="generateBtn">Generate DTR</button>
-                <button id="downloadBtn">Download Excel</button>
+
+           <!-- This is a single-line comment <button id="generateBtn">Generate DTR</button> -->     
+                <button id="generateAllBtn">Convert DTR</button>
+                <button id="downloadBtn">Download Generated Excel</button>
                 <button id="printBtn">Print</button>
             </div>
 
@@ -83,16 +82,16 @@
                 <div class="setting-group">
                     <label for="paperSize">Paper Size</label>
                     <select id="paperSize">
-                        <option value="a4">A4</option>
+                        <option value="legal">Legal</option>
                         <option value="folio">Folio</option>
+                        <option value="a4">A4</option>
                     </select>
                 </div>
             </div>
 
-            <div id="status" class="status"></div>
+            <div id="status" class="status">Please upload your ZKTeco attendance file to begin.</div>
         </section>
 
-       
         <section class="preview-shell">
             <div class="preview-header no-print">
                 <h2>Preview Area</h2>
@@ -103,7 +102,7 @@
         </section>
 
         <footer class="site-footer no-print">
-            <p>Batang Taga Isla, Una Sa Edukasyon!</p>
+            <p> --Batang Taga Isla, Una Sa Edukasyon!--</p>
         </footer>
     </div>
 
