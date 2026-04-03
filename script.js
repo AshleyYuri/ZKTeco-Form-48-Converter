@@ -883,11 +883,11 @@ function buildSingleHorizontalCopy(ws, startCol, emp, monthText, regularHours, s
     ws.getCell(`${F}14`).alignment = center;
 
     ws.getCell(`${B}15`).value = "Arrival";
-    ws.getCell(`${C}15`).value = "Depar-ture";
+    ws.getCell(`${C}15`).value = "Departure";
     ws.getCell(`${D}15`).value = "Arrival";
-    ws.getCell(`${E}15`).value = "Depar-ture";
+    ws.getCell(`${E}15`).value = "Departure";
     ws.getCell(`${F}15`).value = "Hours";
-    ws.getCell(`${G}15`).value = "Min-utes";
+    ws.getCell(`${G}15`).value = "Minutes";
 
     [B, C, D, E, F, G].forEach(letter => {
         ws.getCell(`${letter}15`).font = { bold: true, size: 7.5 };

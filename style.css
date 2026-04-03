@@ -354,6 +354,7 @@ body {
     height: 100%;
 }
 
+/* make the whole copy a vertical flex layout */
 .form48-copy {
     flex: 1 1 0;
     min-width: 0;
@@ -362,12 +363,10 @@ body {
     padding: 5px 5px 6px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     font-family: "Times New Roman", Times, serif;
     color: #000;
     height: 7.95in;
 }
-
 .form48-page.a4 .form48-copy {
     height: 7.65in;
 }
@@ -453,10 +452,12 @@ body {
     text-align: center;
 }
 
+/* make the table area stretch */
 .form48-table {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
+    flex: 1;
 }
 
 .form48-table th,
@@ -476,13 +477,19 @@ body {
     font-weight: 700;
 }
 
+/* top content should occupy remaining space */
 .copy-top {
     flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
+
+/* push certification block near the bottom */
 .copy-bottom {
-    margin-top: 6px;
+    margin-top: auto;
 }
+
 
 .certification {
     margin-top: 8px;
@@ -491,12 +498,12 @@ body {
 }
 
 .verified {
-    margin-top: 8px;
+    margin-top: 6px;
     line-height: 1.2;
 }
 
 .incharge-wrap {
-    margin-top: 10px;
+    margin-top: 8px;
     text-align: center;
 }
 
